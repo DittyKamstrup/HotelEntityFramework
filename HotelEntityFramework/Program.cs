@@ -10,6 +10,20 @@ namespace HotelEntityFramework
     {
         static void Main(string[] args)
         {
+            using (var db = new HotelContext())
+            {
+                var hotelList =
+                    from h in db.Hotel
+                    select h;
+
+                Console.WriteLine("Hotel informationer:");
+
+                foreach (var h in hotelList)
+                {
+                    Console.WriteLine(h.ToString());
+                }
+            }
+
         }
     }
 }
