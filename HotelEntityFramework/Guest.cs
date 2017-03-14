@@ -29,5 +29,10 @@ namespace HotelEntityFramework
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Booking> Booking { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("Guest_No: {0}, Name: {1}, Address: {2}", Guest_No, Name, Address);
+        }
     }
 }

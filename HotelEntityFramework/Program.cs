@@ -12,6 +12,9 @@ namespace HotelEntityFramework
         {
             using (var db = new HotelContext())
             {
+
+                // Opgave 2.1
+
                 var hotelList =
                     from h in db.Hotel
                     select h;
@@ -21,6 +24,19 @@ namespace HotelEntityFramework
                 foreach (var h in hotelList)
                 {
                     Console.WriteLine(h.ToString());
+                }
+
+                //Opgave 2.2
+
+                var guestList =
+                    from g in db.Guest
+                    select g;
+
+                Console.WriteLine("Gæsteliste:");
+
+                foreach (var g in guestList)
+                {
+                    Console.WriteLine(g.ToString());
                 }
             }
 

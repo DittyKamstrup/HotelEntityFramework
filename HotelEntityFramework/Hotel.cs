@@ -32,7 +32,7 @@ namespace HotelEntityFramework
 
         public override string ToString()
         {
-            return string.Format("Booking: {0}, Guest: {1}, Hotel: {2}, Room: {3}", Hotel_No, Name, Address, Room);
+            return string.Format("Hotel_No: {0}, Name: {1}, Address: {2}", Hotel_No, Name, Address);
         }
     }
 }
