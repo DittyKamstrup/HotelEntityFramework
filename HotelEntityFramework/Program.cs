@@ -38,6 +38,22 @@ namespace HotelEntityFramework
                 {
                     Console.WriteLine(g.ToString());
                 }
+
+                //Opgave 3.1 - List hotelnavn, adresse, samt værelsesinformation(nr, type, pris) om de værelser hotellerne har. 
+
+                var værelsesInfo =
+                    from h in db.Hotel
+                    join r in db.Room
+                        on h.Hotel_No equals r.Hotel_No
+                    select new { h.Name, h.Address, r.Room_No, r.Types, r.Price };
+
+                Console.WriteLine("VærelsesInfo:");
+
+                foreach (var h in værelsesInfo)
+                {
+                    Console.WriteLine(h.ToString());
+                }
+
             }
 
         }
