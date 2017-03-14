@@ -45,7 +45,7 @@ namespace HotelEntityFramework
                     from h in db.Hotel
                     join r in db.Room
                         on h.Hotel_No equals r.Hotel_No
-                    select new { h.Name, h.Address, r.Room_No, r.Types, r.Price };
+                    select new { Name = h.Name, Address = h.Address, Room_No = r.Room_No, Type = r.Types, Price = r.Price };
 
                 Console.WriteLine("VærelsesInfo:");
 
@@ -53,6 +53,15 @@ namespace HotelEntityFramework
                 {
                     Console.WriteLine(h.ToString());
                 }
+
+                //Opgave 3.2 - List alle de reservationer hver enkelt værelse har.
+
+
+                var reservationer =
+                    from r in db.Room
+                    join b in db.Booking
+                        on r.Room_No equals b.Room_No
+                    select new { Room = r.Room_No, Booking = b.Room_No };
 
             }
 
