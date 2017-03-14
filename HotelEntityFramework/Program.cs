@@ -63,6 +63,12 @@ namespace HotelEntityFramework
                         on r.Room_No equals b.Room_No
                     select new { Room = r.Room_No, Booking = b.Room_No };
 
+                Console.WriteLine("Reservationer:");
+
+                foreach (var r in reservationer)
+                {
+                    Console.WriteLine(r.ToString());
+                }
             }
 
         }
